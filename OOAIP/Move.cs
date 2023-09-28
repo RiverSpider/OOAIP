@@ -2,29 +2,39 @@
 using System.Numerics;
 using System.Linq;
 
-interface IMove {
-        double[] movement(double[] speed, bool exception);
-    }
+using Vectors;
 
 namespace Movement {
+
+    interface IMove {
+            void movement(bool exception = true);
+    }
+
+    public class Coordinates {
+        public Vectors.Vector Position {get; set;}
+        public Vectors.Vector Velocity {get; set;}
+    }
+
     public class Move : IMove {
 
-        static double[] position;
+        //static IPosition movable;
 
-        public Move() {
+        private Coordinates movable;
 
+        public Move(Coordinates movable) {
+            this.movable = movable;
         }
-        public Move(double[] startingPosition) {
-            position = startingPosition;
+
+        public Vectors.Vector getPosition() {
+            return movable.Position;
         }
-        public double[] movement(double[] speed, bool exception = true) {
+
+        public void movement(bool exception = true) {
             if (!exception) {
                 throw new Exception();
             }
             try {
-                position = position.Zip(speed, (a, b) => a + b).ToArray();
-
-                return position;
+                movable.Position = Vectors.Vector.sum(movable.Position, movable.Velocity);
             } catch (Exception ex) {
                 throw new Exception();
             }

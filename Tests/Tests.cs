@@ -3,28 +3,28 @@ using TechTalk.SpecFlow;
 using System.Numerics;
 
 using Movement;
+using Vectors;
 
 namespace Tests
 {
     [Binding]
     public class StepDefinitions
     {
-        Move move = new Move();
+        Move move;
+        Coordinates position = new Coordinates();
         
-        double[] initial_coordinates, speed;
         bool exception = true;
 
         [Given(@"космический корабль находится в точке пространства с координатами \((.*), (.*)\)")]
-        public void ДопустимКосмическийКорабльНаходитсяВТочкеПространстваСКоординатами(double p0, double p1)
+        public void ДопустимКосмическийКорабльНаходитсяВТочкеПространстваСКоординатами(int p0, int p1)
         {
-            initial_coordinates = new double[] { p0, p1 };
-            move = new Move(initial_coordinates);
+            position.Position = new Vectors.Vector(new int[] { p0, p1 });
         }
 
         [Given(@"имеет мгновенную скорость \((.*), (.*)\)")]
-        public void ИИмеетМгновеннуюСкорость(double p0, double p1)
+        public void ИИмеетМгновеннуюСкорость(int p0, int p1)
         {
-            speed = new double[] { p0, p1 };
+            position.Velocity = new Vectors.Vector(new int[] { p0, p1 });
         }
 
         [Given(@"скорость корабля определить невозможно")]
@@ -49,22 +49,24 @@ namespace Tests
         public void ПроисходитПрямолинейноеРавномерноеДвижениеБезДеформации()
         {
             try{
-            initial_coordinates = move.movement(speed, exception);
+                move = new Move(position);
+                move.movement(exception);
             }
             catch{}
         }
 
         [Then(@"космический корабль перемещается в точку пространства с координатами \((.*), (.*)\)")]
-        public void КосмическийКорабльПеремещаетсяВТочкуПространстваСКоординатами(double p0, double p1)
+        public void КосмическийКорабльПеремещаетсяВТочкуПространстваСКоординатами(int p0, int p1)
         {
-            double[] values = new double[] { p0, p1 };
-            Assert.True(initial_coordinates.SequenceEqual(values));
+            //IPosition values new IPosition();
+            int[] values = new int[] { p0, p1 };
+            Assert.Equal(values, move.getPosition().getVector());
         }
 
         [Then(@"возникает ошибка Exception")]
             public void ТоВозникаетОшибкаException()
             {
-                Assert.Throws<System.Exception>(() => move.movement(speed, exception));
+                Assert.Throws<System.Exception>(() => move.movement(exception));
             }  
         }
 }

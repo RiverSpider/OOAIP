@@ -7,10 +7,9 @@ using Vectors;
 namespace Movement {
 
     interface IMove {
-            void movement(bool exception = true);
+            void movement();
     }
-
-    public class Coordinates {
+    public class ICoordinates {
         public Vectors.Vector Position {get; set;}
         public Vectors.Vector Velocity {get; set;}
     }
@@ -19,9 +18,9 @@ namespace Movement {
 
         //static IPosition movable;
 
-        private Coordinates movable;
+        private ICoordinates movable;
 
-        public Move(Coordinates movable) {
+        public Move(ICoordinates movable) {
             this.movable = movable;
         }
 
@@ -29,10 +28,7 @@ namespace Movement {
             return movable.Position;
         }
 
-        public void movement(bool exception = true) {
-            if (!exception) {
-                throw new Exception();
-            }
+        public void movement() {
             try {
                 movable.Position = Vectors.Vector.sum(movable.Position, movable.Velocity);
             } catch (Exception ex) {

@@ -9,7 +9,6 @@ namespace Tests
     [Binding]
     public class RotationSteps
     {
-        SpaceshipRotation spaceshipRotation;
         double initialDegrees;
         double rotationDegrees;
         bool rotatable = true;
@@ -54,7 +53,7 @@ namespace Tests
             vectorMock.SetupSet(v => v.Angle = It.IsAny<double>());
             vectorMock.Setup(v => v.Rotate(It.IsAny<double>()));
 
-            rotator = new SpaceshipRotator(vectorMock.Object);
+            rotator = new SpaceshipRotation(vectorMock.Object);
             }
             catch{}
         }

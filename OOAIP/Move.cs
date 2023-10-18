@@ -9,7 +9,7 @@ namespace Movement {
     interface IMove {
             void movement();
     }
-    public class ICoordinates {
+    public interface ICoordinates {
         public Vectors.Vector Position {get; set;}
         public Vectors.Vector Velocity {get; set;}
     }
@@ -22,10 +22,6 @@ namespace Movement {
 
         public Move(ICoordinates movable) {
             this.movable = movable;
-        }
-
-        public Vectors.Vector getPosition() {
-            return movable.Position;
         }
 
         public void movement() {

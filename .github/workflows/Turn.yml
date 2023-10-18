@@ -1,4 +1,4 @@
-name: TurnTest
+name: Tests
 
 on:
   push:
@@ -24,3 +24,6 @@ jobs:
 
       - name: Turn Test
         run: dotnet test TestTurn /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+
+      - name: Move Test
+        run: dotnet test Tests /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov

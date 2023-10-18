@@ -7,7 +7,7 @@ using Vectors;
 namespace Movement {
 
     interface IMove {
-            void movement();
+            void movement(bool exp = true);
     }
     public interface ICoordinates {
         public Vectors.Vector Position {get; set;}
@@ -24,7 +24,10 @@ namespace Movement {
             this.movable = movable;
         }
 
-        public void movement() {
+        public void movement(bool exp = true) {
+            if (!exp) {
+                    throw new Exception();
+            }
             try {
                 movable.Position = Vectors.Vector.sum(movable.Position, movable.Velocity);
             } catch (Exception ex) {

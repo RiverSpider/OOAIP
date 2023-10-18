@@ -15,13 +15,10 @@ public class SpaceshipRotation
 
     public void RotateSpaceship(double startDegrees, double rotationDegrees, bool rotatable)
     {
-        if (!rotatable) {
-                throw new Exception();
-            }
         try {
                 _vector.Angle = startDegrees;
                 _vector.Rotate(rotationDegrees);
-            } catch (Exception) {
+            } catch {
                 throw new Exception();
             }
     }

@@ -5,7 +5,7 @@ public interface IVector
 {
     double Angle { get; set; } 
     double AngularVelocity { get; set; } 
-    double Rotatable { get; set; } 
+    bool Rotatable { get; set; } 
 
     void Rotate(double degrees); 
 }
@@ -14,7 +14,7 @@ public class Vector : IVector
 {
     private double _angle;
     private double _angularVelocity;
-    private double _rotatability;
+    private bool _rotatability;
 
     public double Angle
     {
@@ -38,12 +38,12 @@ public class Vector : IVector
         }
     }
 
-    public double Rotatable
+    public bool Rotatable
     {
         get { return _rotatability; }
         set
         {
-            if (double.IsNaN(value))
+            if (value == false)
                 throw new ArgumentException();
             _rotatability = value;
         }

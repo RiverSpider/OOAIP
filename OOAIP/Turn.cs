@@ -1,7 +1,3 @@
-using System.Numerics;
-using System.Linq;
-
-
 namespace Rotatable{
 using Vectorss;
 public class SpaceshipRotation
@@ -13,7 +9,7 @@ public class SpaceshipRotation
         _vector = vector ?? throw new ArgumentNullException(nameof(vector));
     }
 
-    public void RotateSpaceship(double startDegrees, double rotationDegrees, bool rotatable)
+    public void RotateSpaceship(double startDegrees, double rotationDegrees)
     {
         try {
                 _vector.Angle = startDegrees;

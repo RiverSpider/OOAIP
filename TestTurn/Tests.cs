@@ -63,7 +63,7 @@ namespace Tests
 
             rotator = new SpaceshipRotation(vectorMock.Object);
             if(!(double.IsNaN(initialDegrees) || double.IsNaN(rotationDegrees) || rotatable == false)){
-                rotator.RotateSpaceship(initialDegrees, rotationDegrees, rotatable); 
+                rotator.RotateSpaceship(initialDegrees, rotationDegrees); 
             }
             }
             catch{}        
@@ -79,7 +79,7 @@ namespace Tests
         [Then(@"возникает ошибка Exception")]
             public void ТоВозникаетОшибкаException()
             {
-                 Assert.Throws<Exception>(() => rotator.RotateSpaceship(initialDegrees, rotationDegrees, rotatable));
+                 Assert.Throws<Exception>(() => rotator.RotateSpaceship(initialDegrees, rotationDegrees));
             }  
         }
 }

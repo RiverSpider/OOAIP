@@ -19,7 +19,7 @@ using Vectors;
 
             // Act
             var emd = new Move(mock.Object);
-            emd.movement();
+            emd.Execute();
 
             // Assert
             mock.VerifySet(m => m.Position = new Vectors.Vector(new int[] { 7, 8 }));
@@ -37,7 +37,7 @@ using Vectors;
             mock.Setup(m => m.Position).Throws<Exception>();
 
             // Assert
-            Assert.Throws<Exception>(() => emd.movement());
+            Assert.Throws<Exception>(() => emd.Execute());
         }
 
         [Test]
@@ -51,13 +51,11 @@ using Vectors;
             mock.Setup(m => m.Velocity).Throws<Exception>();
 
             // Assert
-            Assert.Throws<Exception>(() => emd.movement());
+            Assert.Throws<Exception>(() => emd.Execute());
         }
 
         [Test]
         public void ImpossibleChangeCurrentPosition() {
-            bool exp = false;
-
             var mock = new Mock<ICoordinates>();
         
             mock.SetupGet(m => m.Position).Returns(new Vectors.Vector(new int[] { 12, 5 }));
@@ -67,7 +65,7 @@ using Vectors;
             var emd = new Move(mock.Object);
 
             // Assert
-            Assert.Throws<Exception>(() => emd.movement(exp));
+            Assert.Throws<Exception>(() => emd.Execute());
         }
      
 }

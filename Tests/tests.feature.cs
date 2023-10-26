@@ -228,6 +228,40 @@ testRunner.Then("возникает ошибка Exception", ((string)(null)), (
             this.ScenarioCleanup();
         }
         
+        [Xunit.SkippableFactAttribute(DisplayName="Игровой объект может вращаться вокруг собственной оси больше 360")]
+        [Xunit.TraitAttribute("FeatureTitle", "Поворот")]
+        [Xunit.TraitAttribute("Description", "Игровой объект может вращаться вокруг собственной оси больше 360")]
+        public void ИгровойОбъектМожетВращатьсяВокругСобственнойОсиБольше360()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Игровой объект может вращаться вокруг собственной оси больше 360", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 32
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 33
+testRunner.Given("космический корабль имеет угол наклона 45 град к оси OX", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Дано ");
+#line hidden
+#line 34
+testRunner.And("имеет мгновенную угловую скорость 360 град", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "И ");
+#line hidden
+#line 35
+testRunner.When("происходит вращение вокруг собственной оси", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Когда ");
+#line hidden
+#line 36
+testRunner.Then("угол наклона космического корабля к оси OX составляет 45 град", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Тогда ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

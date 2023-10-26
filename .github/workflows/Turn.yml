@@ -2,7 +2,7 @@ name: TurnTest
 
 on:
   push:
-    branches: ["master"]
+    branches: ["Rotation"]
 
 jobs:
   build:
@@ -23,4 +23,4 @@ jobs:
         run: dotnet build OOAIP --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Turn Test
-        run: dotnet test TestTurn /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+        run: dotnet test Tests /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov

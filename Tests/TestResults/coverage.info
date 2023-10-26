@@ -1,0 +1,47 @@
+SF:/home/riverspider/OOAIP/SpaceBattle/Turn.cs
+FN:19,System.Void SpaceBattle.RotationCommand::Execute()
+FNDA:8,System.Void SpaceBattle.RotationCommand::Execute()
+DA:20,8
+DA:21,8
+DA:22,6
+DA:23,2
+DA:24,2
+FN:12,System.Void SpaceBattle.RotationCommand::.ctor(SpaceBattle.IRotate,SpaceBattle.Angle)
+FNDA:5,System.Void SpaceBattle.RotationCommand::.ctor(SpaceBattle.IRotate,SpaceBattle.Angle)
+DA:13,5
+DA:14,5
+DA:15,5
+DA:16,5
+DA:17,5
+LF:10
+LH:10
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:/home/riverspider/OOAIP/SpaceBattle/VectorTurn.cs
+FN:7,System.Int32 SpaceBattle.Angle::get_StartAngle()
+FNDA:0,System.Int32 SpaceBattle.Angle::get_StartAngle()
+DA:8,0
+FN:8,System.Void SpaceBattle.Angle::set_StartAngle(System.Int32)
+FNDA:0,System.Void SpaceBattle.Angle::set_StartAngle(System.Int32)
+DA:9,0
+FN:12,System.Void SpaceBattle.Angle::Rotate(System.Int32)
+FNDA:0,System.Void SpaceBattle.Angle::Rotate(System.Int32)
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+BRDA:15,19,0,0
+BRDA:15,19,1,0
+FN:17,System.Int32 SpaceBattle.Angle::get_CurrentAngle()
+FNDA:2,System.Int32 SpaceBattle.Angle::get_CurrentAngle()
+DA:18,2
+LF:7
+LH:1
+BRF:2
+BRH:0
+FNF:4
+FNH:1
+end_of_record

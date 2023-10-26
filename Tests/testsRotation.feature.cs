@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Tests
+namespace TestsRotation
 {
     using TechTalk.SpecFlow;
     using System;
@@ -28,10 +28,10 @@ namespace Tests
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "tests.feature"
+#line 1 "testsRotation.feature"
 #line hidden
         
-        public ПоворотFeature(ПоворотFeature.FixtureData fixtureData, Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ПоворотFeature(ПоворотFeature.FixtureData fixtureData, TestsRotation_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();

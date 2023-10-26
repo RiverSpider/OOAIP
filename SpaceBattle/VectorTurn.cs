@@ -12,7 +12,7 @@ public class Angle
     public virtual void Rotate(int degrees)
     {
         var newAngle = (_angle + degrees) % 360;
-        _angle = newAngle < 0 ? newAngle + 360 : newAngle;
+        _angle = newAngle + 360;
     }
 
     public int CurrentAngle => _angle;
